@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotate Task</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        function saveAnnotation() {
+            alert('Annotation saved!');
+        }
+    </script>
+</head>
+<body>
+    <h1>Annotate Image</h1>
+    <p>Project: {{ task.project.name }}</p>
+    <p>Description: {{ task.project.description }}</p>
+    <img src="{{ task.image_url }}" alt="Image to annotate"><br>
+    <button onclick="saveAnnotation()">Save Annotation</button>
+</body>
+</html>
