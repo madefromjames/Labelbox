@@ -7,7 +7,7 @@ class AnnotationProjectAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 class AnnotationTaskAdmin(admin.ModelAdmin):
-    list_display = ('project', 'image_url', 'created_at')
+    list_display = ('project', 'image_url', 'annotations', 'created_at')
     search_fields = ('project__name', 'image_url')
 
 admin.site.register(AnnotationProject, AnnotationProjectAdmin)

@@ -12,9 +12,9 @@ class AnnotationProject(models.Model):
 class AnnotationTask(models.Model):
     project = models.ForeignKey(AnnotationProject, on_delete=models.CASCADE, related_name='tasks')
     image_url = models.URLField()
-    annotations = models.JSONField(default=dict) # Store annotations as a JSON object
+    annotations = models.JSONField(default=dict, blank=True, null=True) # Store annotations as a JSON object
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Task for {self.project.name}"
+        return f"Task for {self.project.name } is {self.annotations}"
     
